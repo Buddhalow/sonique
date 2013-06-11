@@ -63,12 +63,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<?php endforeach;?>
 				</ul>
 				<ul style="float: right">
-					<li>Qi: <?php echo $user['qi']?></li>
+					
 				</ul>
 			</div>
 		</div>
 		<div class="row">
 			<div class="span10 content">
+				<?php echo $this->Session->flash()?>
 				<?php echo $this->fetch('content')?>
 			</div>
 		</div>

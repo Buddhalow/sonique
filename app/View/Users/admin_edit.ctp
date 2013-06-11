@@ -9,9 +9,19 @@
 		echo $this->Form->input('email');
 		echo $this->Form->input('active');
 		echo $this->Form->input('CourseClass');
+		echo $this->Form->input('role_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->create('User', array('action' => 'changePassword'));?>
+	<fieldset>
+		<legend><?php echo __('Change password')?></legend>
+		<?php 
+		echo $this->Form->input('password', array('type' => 'password', 'value' => ''));
+		echo $this->Form->input('password2', array('value' => '', 'type' => 'password'));
+		?>
+	</fieldset>
+<?php echo $this->Form->end(__('Change'));?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

@@ -12,8 +12,8 @@
 	
 	<div style="float:left"><?php echo $this->Form->input('hallId', array('selected' => $hallId, 'label' => __('Hall'), 'id' => 'hallId', 'type' => 'select', 'options' => $halls));?></div>
 	<script language="javascript">
-		var week = "<?php echo $_GET['week']?>";
-		var year ="<?php echo $_GET['year']?>";
+		var week = "<?php echo $week?>";
+		var year ="<?php echo $year?>";
 		function bind(id) {
 			document.getElementById(id).addEventListener('change', function () {
 				var selectedValue =  document.getElementById(id).options[document.getElementById(id).selectedIndex].value;

@@ -87,13 +87,13 @@ $wn = array(__('Monday'), __('Tuesday'), __('Wednesday'), __('Thursday'), __('Fr
 					$endtime = date('H:i', strtotime($lession['lessions']['time']  ." +".$lession['lessions']['duration'] . " minutes"));	;
 					$minute = date('i', strtotime($lession['lessions']['time']));
 					$minutes = (($hour * 60) + $minute);
-				
+					
 					
 					// debug($minutes);
 					$top = ($minutes - (480)) / $dayMinutes;
 
 					$top = $top * 100;
-					$height = round((date($lession['lessions']['duration']) / (600))* 100);
+					$height = round((date($lession['lessions']['duration']) / (1080-60*6))* 100);
 					?>
 					<div class="lession" style="position: absolute;left:<?php echo (100 / ($count_a)) * $x ;?>%; width:<?php echo ceil((100 / ($count_a)) )  ?>%; top: <?php echo $top  ?>%; height: <?php echo $height?>%"><b><?php echo date('H:i', strtotime($lession['lessions']['time']))?> - <?php echo $endtime?> <?php if($lession['lessions']['notes'] != NULL):?>
 					<?php echo $this->Html->image("/img/s_info.png", array('style' => 'float: right; padding-right: 10px', 'title' => $lession['lessions']['notes']))?>

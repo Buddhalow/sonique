@@ -70,11 +70,11 @@ class User extends AppModel {
 			'float' => array(
 				'rule' => array('float')
 			)
-		)
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
+	public $belongsTo = array('Role');
 /**
  * hasMany associations
  *

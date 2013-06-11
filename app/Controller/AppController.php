@@ -35,8 +35,12 @@ class AppController extends Controller {
 	var $components = array('Auth', 'Session');
 	public function beforeFilter() {
 		parent::beforeFilter();
-		if(isset($this->params["prefix"]) && $this->params["prefix"] == "admin")
+		if(isset($this->params["prefix"]) && $this->params["prefix"] == "admin") {
 			$this->layout = "admin";
+			if($this->Auth->user('role_id') != 1) {
+				throw new Exception("Not authorized");
+			}
+		}
 
 		$user = $this->Auth->user();
 		$this->set(compact('user'));
